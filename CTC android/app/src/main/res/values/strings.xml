@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CTC Tag Checker</string>
+    <string name="accessibility_desc">CTC Tag Checker: автоматически вводит клан-теги в Standoff 2, делает скриншоты и находит свободные теги. Нажатия и скриншоты выполняются только после кнопки «Старт».</string>
+</resources>

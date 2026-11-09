@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CTC Tag Checker"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text=""
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Режим"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rgMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rbTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 символа (напр. AB)" />
+
+            <RadioButton
+                android:id="@+id/rbTwoDigit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 символа + цифра (напр. AB7)" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Символы для первых двух позиций"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/cbLetters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Буквы A–Z" />
+
+        <CheckBox
+            android:id="@+id/cbDigits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Цифры 0–9" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Пауза перед проверкой, мс"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etDelay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="900" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Начать с тега (необязательно)"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapCharacters"
+            android:hint="напр. KA" />
+
+        <Button
+            android:id="@+id/btnAccessibility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="1. Включить службу (Спец. возможности)" />
+
+        <Button
+            android:id="@+id/btnPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. Показать панель поверх игры" />
+
+        <Button
+            android:id="@+id/btnResults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Свободные теги / копировать" />
+
+        <Button
+            android:id="@+id/btnResetCalib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Сбросить калибровку" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Как пользоваться:\n1) Включите службу CTC Tag Checker в Спец. возможностях.\n2) Нажмите «Показать панель» и откройте Standoff 2 → окно переименования клана.\n3) На панели нажмите «Калибр.» и тапайте по подсказкам (один раз).\n4) Нажмите «Старт». «Стоп» — в любой момент."
+            android:textSize="13sp" />
+    </LinearLayout>
+</ScrollView>
