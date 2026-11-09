@@ -226,6 +226,9 @@ class CheckerService : AccessibilityService() {
             tap(p)
             sleep(90)
         }
+        // Подтвердить ввод: в горизонте клавиатура полноэкранная, текст
+        // попадает в строку клавиатуры и коммитится в поле только по OK/✓.
+        c.commit?.let { sleep(120); tap(it); sleep(200) }
         c.apply?.let { sleep(80); tap(it) }
     }
 

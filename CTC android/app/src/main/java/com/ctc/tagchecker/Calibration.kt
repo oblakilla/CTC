@@ -11,6 +11,7 @@ data class Pt(val x: Float, val y: Float)
 class Calibration {
     var field: Pt? = null
     var backspace: Pt? = null
+    var commit: Pt? = null
     var apply: Pt? = null
     var result: Pt? = null
     var freeColor: Int? = null
@@ -25,6 +26,7 @@ class Calibration {
         val o = JSONObject()
         field?.let { o.put("field", pt(it)) }
         backspace?.let { o.put("backspace", pt(it)) }
+        commit?.let { o.put("commit", pt(it)) }
         apply?.let { o.put("apply", pt(it)) }
         result?.let { o.put("result", pt(it)) }
         freeColor?.let { o.put("freeColor", it) }
@@ -50,6 +52,7 @@ class Calibration {
                 val o = JSONObject(s)
                 c.field = readPt(o, "field")
                 c.backspace = readPt(o, "backspace")
+                c.commit = readPt(o, "commit")
                 c.apply = readPt(o, "apply")
                 c.result = readPt(o, "result")
                 if (o.has("freeColor")) c.freeColor = o.getInt("freeColor")

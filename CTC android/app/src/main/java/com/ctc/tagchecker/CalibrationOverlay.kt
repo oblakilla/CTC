@@ -49,6 +49,7 @@ class CalibrationOverlay(
     init {
         steps.add(Step("field", "Тапните по ПОЛЮ ввода клан-тега", false))
         steps.add(Step("backspace", "Тапните по клавише СТЕРЕТЬ (⌫) на клавиатуре", false))
+        steps.add(Step("commit", "Тапните по кнопке OK/✓ клавиатуры (подтверждение ввода в поле). Если текст и так попадает в поле — «Пропустить»", true))
         steps.add(Step("result", "Тапните по месту, где появляется ЗЕЛЁНАЯ ГАЛОЧКА / красная надпись «занят»", false))
         steps.add(Step("apply", "Тапните по кнопке проверки/подтверждения. Если её нет — «Пропустить»", true))
         for (ch in needed) {
@@ -137,6 +138,7 @@ class CalibrationOverlay(
         when {
             id == "field" -> result.field = p
             id == "backspace" -> result.backspace = p
+            id == "commit" -> result.commit = p
             id == "result" -> result.result = p
             id == "apply" -> result.apply = p
             id.startsWith("key_") && id.length > 4 -> result.keys[id[4]] = p
@@ -149,6 +151,7 @@ class CalibrationOverlay(
         val s = steps[idx]
         if (!s.optional) return
         if (s.id == "apply") result.apply = null
+        if (s.id == "commit") result.commit = null
         next()
     }
 
